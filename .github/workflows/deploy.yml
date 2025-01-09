@@ -47,6 +47,5 @@ jobs:
         with:
           project: "nandi-twa-56"
           entrypoint: "server.ts"
-          root: "dist"
           
           
