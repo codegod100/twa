@@ -30,18 +30,23 @@ pub fn sum(numbers: &[i32]) -> i32 {
 }
 
 #[wasm_bindgen]
-pub fn yolo() {
-  (0..8).into_par_iter().for_each(|_| {
-    log("sup, spawning");
-    // tokio::spawn(async {
-    log("hello?");
-    log("spawned");
-    let mut rng = rand::thread_rng();
-    let random_numbers: Vec<i32> =
-      (0..10).map(|_| rng.gen_range(0..100)).collect();
-    // log(&format!("Random numbers: {:?}", random_numbers));
-    log(&format!("{:#?}", sum(&random_numbers)));
-    log("done");
-    // });
-  })
+pub fn yolo() -> Vec<i32> {
+  let foo = (0..10000000)
+    .into_par_iter()
+    .map(|_| {
+      // log("sup, spawning");
+      // tokio::spawn(async {
+      // log("hello?");
+      // log("spawned");
+      let mut rng = rand::thread_rng();
+      let random_numbers: Vec<i32> =
+        (0..1000).map(|_| rng.gen_range(0..1000)).collect();
+      // log(&format!("Random numbers: {:?}", random_numbers));
+      // log(&format!("{:#?}", sum(&random_numbers)));
+      // log("done");
+      // });
+      sum(&random_numbers)
+    })
+    .collect::<Vec<i32>>();
+  foo
 }

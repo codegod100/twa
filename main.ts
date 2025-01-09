@@ -14,7 +14,10 @@ async function main() {
   //   console.log({ arrayOf100 });
   //   console.log(sum(arrayOf100));
   // }
-  yolo();
+  const p = performance.now();
+  const y = yolo();
+  const now = performance.now() - p;
+  console.log({ y, now });
 }
 
 main();

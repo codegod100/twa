@@ -14,6 +14,7 @@
   },
   "scripts": {
     "wasm": "wasm-pack build --target web",
-    "build": "vite build"
+    "build": "vite build",
+    "dev": "bun run server.ts"
   }
 }
