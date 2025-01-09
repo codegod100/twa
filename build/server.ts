@@ -10,6 +10,6 @@ app.use(
     crossOriginEmbedderPolicy: true,
   })
 );
-app.use("/*", serveStatic({ root: "./dist/" }));
+app.use("/*", serveStatic({ root: "./" }));
 
 export default app;

@@ -17,6 +17,6 @@
   "scripts": {
     "wasm-build": "wasm-pack build --target web",
     "build": "vite build",
-    "dev": "bun run server.ts"
+    "dev": "deno serve -A build/server.ts"
   }
 }
