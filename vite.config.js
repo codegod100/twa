@@ -9,6 +9,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "build/dist",
     rollupOptions: {
       output: {
         format: "es", // Use 'es' format for workers
