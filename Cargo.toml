@@ -1,0 +1,17 @@
+[package]
+name = "twa"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wasm-bindgen = "0.2"
+rayon = "1.8"
+wasm-bindgen-rayon = "1.2"
+tokio = { version = "*", features = ["rt"] }
+tokio_with_wasm = { version = "*", features = ["rt"] }
+threadpool = "1.8.1"
+rand = "0.8.5"
+getrandom = { version = "0.2", features = ["js"] }
+
+[lib]
+crate-type = ["cdylib", "rlib"]
