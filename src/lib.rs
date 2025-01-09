@@ -2,7 +2,6 @@ use rand::Rng;
 use rayon::iter::{
   IntoParallelIterator, IntoParallelRefIterator, ParallelIterator,
 };
-use tokio_with_wasm::alias as tokio;
 use wasm_bindgen::prelude::*;
 pub use wasm_bindgen_rayon::init_thread_pool;
 
@@ -30,21 +29,13 @@ pub fn sum(numbers: &[i32]) -> i32 {
 }
 
 #[wasm_bindgen]
-pub fn yolo() -> Vec<i32> {
-  let foo = (0..10000000)
+pub fn yolo(n: i32) -> Vec<i32> {
+  let foo = (0..n)
     .into_par_iter()
     .map(|_| {
-      // log("sup, spawning");
-      // tokio::spawn(async {
-      // log("hello?");
-      // log("spawned");
       let mut rng = rand::thread_rng();
       let random_numbers: Vec<i32> =
         (0..1000).map(|_| rng.gen_range(0..1000)).collect();
-      // log(&format!("Random numbers: {:?}", random_numbers));
-      // log(&format!("{:#?}", sum(&random_numbers)));
-      // log("done");
-      // });
       sum(&random_numbers)
     })
     .collect::<Vec<i32>>();

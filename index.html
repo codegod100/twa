@@ -1,1 +1,15 @@
-<script type="module" src="./main.ts"></script>
+<button>yolo</button>
+<script type="module">
+  import init, { initThreadPool, yolo } from "./pkg/twa.js";
+  const button = document.querySelector("button");
+  async function setup() {
+    await init();
+    await initThreadPool(navigator.hardwareConcurrency);
+  }
+  setup();
+  button.addEventListener("click", async () => {
+    console.log("Button was clicked!");
+    const y = yolo(1000);
+    console.log({ y });
+  });
+</script>

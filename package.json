@@ -2,6 +2,7 @@
   "name": "twa",
   "type": "module",
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.6.1",
     "@types/bun": "latest",
     "vite": "^6.0.7"
   },
@@ -13,7 +14,7 @@
     "http-proxy-middleware": "^3.0.3"
   },
   "scripts": {
-    "wasm": "wasm-pack build --target web",
+    "wasm-build": "wasm-pack build --target web",
     "build": "vite build",
     "dev": "bun run server.ts"
   }
