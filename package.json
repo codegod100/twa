@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "hono": "^4.6.16",
-    "http-proxy-middleware": "^3.0.3"
+    "http-proxy-middleware": "^3.0.3",
+    "wasm-pack": "^0.13.1"
   },
   "scripts": {
     "wasm-build": "wasm-pack build --target web",

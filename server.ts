@@ -1,4 +1,5 @@
-import { serveStatic } from "hono/bun";
+// import { serveStatic } from "hono/bun";
+import { serveStatic } from "hono/deno";
 import { Hono } from "hono";
 import { secureHeaders } from "hono/secure-headers";
 const app = new Hono();
