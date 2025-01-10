@@ -1,12 +1,26 @@
 <button>yolo</button>
+<div id="app"></div>
 <script type="module">
   import init, { initThreadPool, yolo } from "./pkg/twa.js";
+  import App from "./App.svelte";
+  import { mount } from "svelte";
   const button = document.querySelector("button");
   async function setup() {
     await init();
     await initThreadPool(navigator.hardwareConcurrency);
   }
   setup();
+  const app = mount(App, {
+    target: document.querySelector("#app"),
+    props: {
+      some: "property",
+      onClick: () => {
+        const y = yolo(1000);
+        console.log({ y });
+      },
+    },
+  });
+  console.log(app);
   button.addEventListener("click", async () => {
     console.log("btton was clacked!");
     const y = yolo(1000);
